@@ -1,0 +1,18 @@
+
+FROM fedora:24
+
+ARG VERSION=none
+
+RUN dnf install -y procps-ng
+RUN dnf install -y redland rasqal raptor2
+RUN dnf install -y json-c
+RUN dnf install -y libmicrohttpd
+RUN dnf install -y libuv
+
+COPY product/librdf_storage_cassandra.so /usr/lib64/redland/
+COPY product/sparql /usr/local/bin/
+
+CMD /usr/local/bin/sparql 8080 cassandra cassandra
+
+EXPOSE 8080
+

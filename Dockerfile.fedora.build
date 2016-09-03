@@ -1,0 +1,17 @@
+FROM sparql-fedora-dev
+ARG SPARQL_VERSION=HEAD
+ARG CASSANDRARDF_VERSION=HEAD
+RUN mkdir -p /usr/local/src/sparql
+WORKDIR /usr/local/src/sparql
+RUN git clone http://github.com/cybermaggedon/sparql-service.git .; git checkout ${SPARQL_VERSION}
+RUN make
+RUN mkdir -p /usr/local/src/cassandra-rdf
+WORKDIR /usr/local/src/cassandra-rdf
+RUN git clone http://github.com/cybermaggedon/cassandra-redland.git .; git checkout ${CASSANDRARDF_VERSION}
+RUN mkdir cpp
+WORKDIR cpp
+RUN git clone https://github.com/datastax/cpp-driver.git .; git checkout 9db171de76168b08f1e26fc71fedbca467f51b8f
+RUN cmake .
+RUN make
+WORKDIR /usr/local/src/cassandra-rdf
+RUN make

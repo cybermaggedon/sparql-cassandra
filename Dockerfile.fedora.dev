@@ -1,0 +1,12 @@
+FROM fedora:24
+RUN dnf install -y git autoconf automake
+RUN dnf install -y libpcap-devel boost-devel gcc-c++
+RUN dnf install -y libtool make
+RUN dnf install -y texinfo-tex
+RUN dnf install -y rpm-build
+RUN dnf install -y redland-devel rasqal-devel raptor2-devel
+RUN dnf install -y json-c-devel
+RUN dnf install -y libmicrohttpd-devel
+RUN dnf install -y cmake
+RUN dnf install -y libuv-devel
+RUN dnf install -y openssl-devel
