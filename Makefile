@@ -1,6 +1,6 @@
 
-VERSION=0.02
-SPARQL_VERSION=662f721c1dfdce509211d343c3d0dbb891f6aca7
+VERSION=0.03
+SPARQL_VERSION=024de77ad92d8a27e5521adfd8c9d922daabe701
 CASSANDRARDF_VERSION=befb28b9abf566d50079321503560ad2bffd4cd7
 
 FEDORA_FILES =  /usr/local/src/cassandra-rdf/librdf_storage_cassandra.so
