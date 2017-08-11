@@ -6,8 +6,8 @@ ARG VERSION=none
 RUN dnf install -y procps-ng
 RUN dnf install -y redland rasqal raptor2
 RUN dnf install -y json-c
-RUN dnf install -y libmicrohttpd
 RUN dnf install -y libuv
+RUN dnf install -y boost
 
 COPY product/librdf_storage_cassandra.so /usr/lib64/redland/
 COPY product/sparql /usr/local/bin/
